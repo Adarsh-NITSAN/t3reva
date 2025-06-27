@@ -1,0 +1,41 @@
+:root {
+  /*Site Colors*/
+  --primary-color: #0066ff;
+  --secondary-color: #00234b;
+  --text-color: #617798;
+  --tertiary-color: #f43fe2;
+  --gray-color: #f8f8f8;
+  --bs-body-color: var(--text-color);
+
+  /*Font-Family*/
+  --font-primary: var(--font-sofia);
+
+  /*Cookie*/
+  --cookieBtnBgColor: transparent;
+  --cookieBtnTextColor: $white;
+}
+
+//****************************************************************************
+//  Font Weight
+//****************************************************************************
+
+$thin-weight: 100;
+$light-weight: 300;
+$regular-weight: 400;
+$medium-weight: 500;
+$semibold-weight: 600;
+$bold-weight: 700;
+
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$text-color: var(--text-color);
+$text-muted-color: var(--text-color);
+$tertiary-color: var(--tertiary-color);
+$gray-color: var(--gray-color);
+$border-color: #e7e7e7;
+
+// $error-color: #ff2949;
+$error-color: var(--bs-danger); // bootstrap's color variables
+$success-color: var(--bs-green); // bootstrap's color variables
+// $warning-color: #feb06d;
+$warning-color: var(--bs-warning); // bootstrap's color variables

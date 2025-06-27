@@ -1,0 +1,167 @@
+/****************************************************************************
+  Body
+ ***************************************************************************/
+body {
+  @extend %fontsize16;
+  // color: $secondary-color;
+
+  font-weight: $regular-weight;
+  text-transform: none;
+  font-family: var(--font-sofia);
+  // font-family: var(--font-brandon);
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  margin-bottom: 0;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 10rem;
+}
+
+section {
+  padding: 0;
+  position: relative;
+  display: block;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: $text-muted-color;
+  text-decoration: none;
+  transition: all 0.2s ease 0s;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  color: var(--primary-color);
+}
+
+p {
+  @extend %fontsize18;
+  font-family: var(--font-brandon);
+  color: $text-muted-color;
+  hyphens: auto;
+  a {
+    font-family: var(--font-sofia);
+  }
+}
+table {
+  width: 100%;
+  border: 1px solid black;
+  tbody {
+    tr {
+      td {
+        border-width: initial;
+      }
+    }
+  }
+}
+
+span {
+  hyphens: auto;
+}
+/****************************************************************************
+  Headings
+ ***************************************************************************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: $semibold-weight;
+  color: $secondary-color;
+}
+
+h1 {
+  @extend %fontsize72;
+  font-weight: $bold-weight;
+}
+
+h2 {
+  @extend %fontsize32;
+}
+
+h3 {
+  @extend %fontsize26;
+}
+
+h4 {
+  @extend %fontsize24;
+  letter-spacing: -0.48px;
+  font-weight: $medium-weight;
+}
+
+h5 {
+  @extend %fontsize20;
+  font-weight: $medium-weight;
+}
+
+h6 {
+  @extend %fontsize20;
+  font-weight: $regular-weight;
+  color: $text-muted-color;
+}
+
+// RTE classes from backend
+
+.primary-color {
+  color: $primary-color !important;
+}
+
+.secondary-color {
+  color: $secondary-color;
+}
+
+.dark-color {
+  color: $secondary-color;
+}
+
+.light-color {
+  color: $white;
+}
+
+.dark-bg-color {
+  background-color: $primary-color;
+}
+.light-bg-color {
+  background-color: $white;
+}
+
+.default-bg-color {
+  background-color: transparent;
+}
+
+.h1 {
+  @extend %fontsize42;
+}
+
+.h2 {
+  @extend %fontsize42;
+}
+
+.h6 {
+  @extend %fontsize24;
+}

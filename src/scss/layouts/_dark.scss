@@ -1,0 +1,691 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  &.theme-dark {
+    .header-main {
+      background-color: $secondary-color;
+      &.header-main-transparent {
+        .header-main-content .navigation li ul {
+          border-top: 1px solid $white;
+        }
+      }
+    }
+    .menu-trigger {
+      .bars {
+        background-color: $white;
+      }
+    }
+    .topbar {
+      .topbar-socials .redux-social-media-list li a {
+        svg {
+          fill: $white;
+        }
+        &:hover {
+          svg {
+            fill: $primary-color;
+          }
+        }
+      }
+      .topbar-contact {
+        svg {
+          fill: $white !important;
+        }
+        a {
+          transition: none;
+
+          &:hover {
+            span {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    .header-main-content {
+      .header-search {
+        svg {
+          color: $white;
+        }
+        .input-group-btn {
+          svg {
+            color: $black;
+          }
+        }
+      }
+      .navigation {
+        background-color: $secondary-color;
+        li {
+          &.has-sub a {
+            color: $white;
+          }
+          ul {
+            background-color: $secondary-color;
+            border: 1px solid $white;
+            border-top: 0;
+            li {
+              &:hover {
+                ul {
+                  border-top: 1px solid $white;
+                }
+              }
+            }
+          }
+          &.slide--up {
+            ul {
+              border: 0px !important;
+              ul {
+                border-top: 0px !important;
+              }
+            }
+          }
+          &.has-sub {
+            &.dropdown-mega {
+              ul {
+                border: 0px;
+              }
+              .dropdown-item {
+                &:hover,
+                &:focus {
+                  background-color: transparent;
+                }
+              }
+            }
+            .nav-arrow {
+              svg {
+                color: $white;
+              }
+            }
+          }
+          &.active-child a {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    .footer {
+      background: color-mix(in srgb, var(--secondary-color) 100%, $white 1%);
+      ul,
+      li,
+      a {
+        color: $white;
+
+        svg {
+          color: $white;
+        }
+      }
+
+      h5,
+      p,
+      span {
+        color: $white;
+      }
+
+      .footer-bar {
+        &::before {
+          border-bottom: 1px solid $white;
+        }
+        .footer-nav ul li a {
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+      .footer-socials-bar .redux-social-media-list li a {
+        svg {
+          color: $white;
+        }
+        &:hover {
+          svg {
+            fill: $primary-color;
+          }
+        }
+      }
+
+      .lower-footer {
+        .lower-footer-container {
+          &::before {
+            border-top: 1px solid $white;
+          }
+        }
+      }
+    }
+
+    .wrapper {
+      background-color: color-mix(
+        in srgb,
+        var(--secondary-color) 100%,
+        $white 1%
+      );
+    }
+    .tx-indexedsearch {
+      span,
+      p,
+      h2 {
+        color: $white;
+      }
+    }
+    .style-switcher .style-switcher-action-links a {
+      background-color: $white;
+      border-color: $white;
+      svg {
+        color: $secondary-color;
+      }
+    }
+
+    .section--bg-light-color {
+      background: color-mix(in srgb, var(--secondary-color) 100%, $white 1%);
+    }
+    .section--bg-gray-color {
+      background: color-mix(in srgb, var(--secondary-color) 50%, $white 50%);
+
+      .section--bg-light-color {
+        background: color-mix(
+          in srgb,
+          var(--secondary-color) 100%,
+          $white 100%
+        );
+      }
+    }
+    .section--bg-image {
+      .section--bg-light-color,
+      .section--bg-gray-color {
+        background: transparent;
+
+        .progressBar {
+          h4 {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+
+    .section--bg-gray-color,
+    .section--bg-light-color {
+      .ce-text,
+      .process-staps-section,
+      .contenttab,
+      .headings,
+      .cta .cta-default,
+      .cat .cta-parallax,
+      .photo-group-section,
+      .sticky-navbar,
+      .rotator-text {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        span {
+          color: $white;
+        }
+      }
+      .testimonials .testimonial-slider__content {
+        h5,
+        p {
+          color: $white;
+        }
+      }
+      .portfolio__masonry,
+      .portfolio__isotope {
+        li {
+          a {
+            color: $white;
+          }
+          &.active {
+            a {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+      .ce-text {
+        ul,
+        ol {
+          li {
+            color: $white;
+          }
+        }
+        blockquote {
+          p {
+            color: $secondary-color;
+          }
+        }
+      }
+      .timeline {
+        .timeline-line {
+          background-color: $white;
+        }
+        .timeline-line__icon {
+          background: $white;
+        }
+        .timeline-item-date,
+        .timeline-item-description h4,
+        .timeline-item-description p {
+          color: $secondary-color;
+        }
+        .timeline-line__card {
+          background-color: $white;
+          &:hover {
+            .timeline-item-date,
+            .timeline-item-description h4,
+            .timeline-item-description p {
+              color: $white;
+            }
+          }
+        }
+      }
+      .process-staps-section a {
+        color: $white;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+      .reviews .review-item {
+        &::after,
+        &::before {
+          background-color: transparent;
+        }
+      }
+      .sticky-navbar {
+        .navbar-sections-tabs {
+          background: transparent;
+          li {
+            color: $white;
+            a {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+      .progressBar {
+        h4 {
+          color: $white;
+        }
+        .progressBar-full {
+          background-color: rgba(255, 255, 255, 0.03);
+        }
+      }
+
+      .counter {
+        h4,
+        h5,
+        span {
+          color: $white;
+        }
+      }
+      .photo-gallery {
+        h2,
+        h6 {
+          color: $white;
+        }
+      }
+      .tablayout,
+      .tab-layout {
+        .nav-link {
+          color: $white;
+          &.active {
+            color: $primary-color;
+          }
+        }
+      }
+      .list .icon-list__item,
+      .countdown {
+        color: $white;
+      }
+      .circular-progressbar {
+        h2,
+        h4,
+        p {
+          color: $white;
+        }
+      }
+      .pricing-list {
+        .nav-link {
+          color: $white;
+        }
+        h4,
+        p {
+          color: $white;
+          a {
+            color: $white;
+            &:hover {
+              color: $primary-color;
+            }
+          }
+          svg {
+            color: $white;
+          }
+        }
+        &.accordiondata {
+          a,
+          p {
+            color: initial;
+          }
+          h4 {
+            color: $secondary-color;
+            &.pricing-content__price {
+              color: $primary-color;
+            }
+            svg {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+      .pricing-comparison {
+        .pricing-header,
+        .pricing-subheader {
+          color: $white;
+        }
+      }
+      .testimonial-cards {
+        h4,
+        p {
+          color: $white;
+        }
+        .team-detailed__content {
+          h4,
+          p {
+            color: inherit;
+          }
+        }
+      }
+      .photo-box {
+        h4,
+        p {
+          color: $white;
+        }
+        a {
+          &:hover {
+            h4 {
+              color: $primary-color;
+            }
+          }
+        }
+        .container-text__link {
+          color: $primary-color;
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+      .clients p {
+        color: $white;
+      }
+      .btn--secondary {
+        &::after {
+          background-color: $primary-color;
+        }
+      }
+      &.breadcrumbs {
+        color: $white;
+        a {
+          color: $white;
+        }
+      }
+      .ce-div {
+        color: $white;
+        margin: 0;
+      }
+      .news-details {
+        h1,
+        span,
+        a {
+          color: $white;
+        }
+        a {
+          &:hover {
+            color: $primary-color;
+          }
+        }
+        .meta-content__tags a {
+          background: $white;
+        }
+      }
+    }
+
+    .ce-text,
+    .process-staps-section,
+    .contenttab,
+    .headings,
+    .cta .cta-default,
+    .cat .cta-parallax,
+    .photo-group-section,
+    .sticky-navbar,
+    .rotator-text {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span {
+        color: $white;
+      }
+    }
+    .testimonials .testimonial-slider__content {
+      h5,
+      p {
+        color: $white;
+      }
+    }
+    .portfolio__masonry,
+    .portfolio__isotope {
+      li {
+        a {
+          color: $white;
+        }
+        &.active {
+          a {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    .ce-text {
+      ul,
+      ol {
+        li {
+          color: $white;
+        }
+      }
+      blockquote {
+        p {
+          color: $secondary-color;
+        }
+      }
+    }
+    .timeline {
+      .timeline-line {
+        background-color: $white;
+      }
+      .timeline-line__icon {
+        background: $white;
+      }
+      .timeline-item-date,
+      .timeline-item-description h4,
+      .timeline-item-description p {
+        color: $secondary-color;
+      }
+      .timeline-line__card {
+        background-color: $white;
+        &:hover {
+          .timeline-item-date,
+          .timeline-item-description h4,
+          .timeline-item-description p {
+            color: $white;
+          }
+        }
+      }
+    }
+    .process-staps-section a {
+      color: $white;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    .reviews .review-item {
+      &::after,
+      &::before {
+        background-color: transparent;
+      }
+    }
+    .sticky-navbar {
+      .navbar-sections-tabs {
+        background: transparent;
+        li {
+          color: $white;
+          a {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+    .progressBar {
+      h4 {
+        color: $white;
+      }
+      .progressBar-full {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+    }
+
+    .counter {
+      h4,
+      h5,
+      span {
+        color: $white;
+      }
+    }
+    .photo-gallery {
+      h2,
+      h6 {
+        color: $white;
+      }
+    }
+    .tablayout,
+    .tab-layout {
+      .nav-link {
+        color: $white;
+        &.active {
+          color: $primary-color;
+        }
+      }
+    }
+    .list .icon-list__item,
+    .countdown {
+      color: $white;
+    }
+    .circular-progressbar {
+      h2,
+      h4,
+      p {
+        color: $white;
+      }
+    }
+    .pricing-list {
+      .nav-link {
+        color: $white;
+      }
+      h4,
+      p {
+        color: $white;
+        a {
+          color: $white;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+      &.accordiondata {
+        a,
+        p {
+          color: initial;
+        }
+        h4 {
+          color: $secondary-color;
+          &.pricing-content__price {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    .pricing-comparison {
+      .pricing-header,
+      .pricing-subheader {
+        color: $white;
+      }
+    }
+    .testimonial-cards {
+      h4,
+      p {
+        color: $white;
+      }
+      .team-detailed__content {
+        h4,
+        p {
+          color: inherit;
+        }
+      }
+    }
+    .photo-box {
+      h4,
+      p {
+        color: $white;
+      }
+      a {
+        &:hover {
+          h4 {
+            color: $primary-color;
+          }
+        }
+      }
+      .container-text__link {
+        color: $primary-color;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+    .clients p {
+      color: $white;
+    }
+    .btn--secondary {
+      &::after {
+        background-color: $primary-color;
+      }
+    }
+    &.breadcrumbs {
+      color: $white;
+      a {
+        color: $white;
+      }
+    }
+    .ce-div {
+      color: $white;
+      margin: 0;
+    }
+    .news-details {
+      h1,
+      span,
+      a {
+        color: $white;
+      }
+      a {
+        &:hover {
+          color: $primary-color;
+        }
+      }
+      .meta-content__tags a {
+        background: $white;
+      }
+    }
+  }
+}

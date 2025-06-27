@@ -1,0 +1,107 @@
+.extended-tab {
+  overflow: hidden;
+}
+.ext-tab__controller {
+  li:not(.active) {
+    a {
+      &:hover {
+        // background: $secondary-color;
+        background: color-mix(in srgb, var(--primary-color) 20%, $white 1%);
+      }
+    }
+    .ext-tab__controller-text::before {
+      opacity: 0;
+      transform: translateX(24px);
+    }
+  }
+}
+
+.ext-tab__controller-text {
+  width: 100%;
+  &::before {
+    height: 8px;
+    content: '';
+    transition: 0.2s ease;
+    width: 8px;
+    float: left;
+    border-radius: 100%;
+    margin-top: 3px;
+    background: $primary-color;
+    position: absolute;
+    transform: translateX(0px);
+    opacity: 1;
+    display: block;
+  }
+}
+
+.ext-tab__controller-dots {
+  &.ext-tab__controller-text::before {
+    display: none;
+  }
+}
+
+.ext-tab-image {
+  position: static;
+  visibility: visible;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}
+
+.ext-tab__controller {
+  width: auto;
+  li {
+    background: none;
+    padding-left: 0;
+    list-style: none;
+    margin: 0 0 15px 0;
+    position: relative;
+    overflow: hidden;
+    transition: 0.2s ease;
+    background: $white;
+
+    &::after {
+      @include abs-position(initial, initial, 0, 0);
+      content: '';
+      transition: 0.2s all ease;
+      backface-visibility: hidden;
+      width: 3px;
+      height: 0;
+      background-color: $primary-color;
+    }
+
+    &.active::after {
+      height: 100%;
+    }
+
+    .controller-text__overline {
+      @extend %fontsize14;
+      font-weight: $medium-weight;
+      margin-bottom: 5px;
+      display: block;
+      transition: 0.2s ease;
+      transform: translateX(20px);
+      color: $primary-color;
+    }
+
+    a {
+      @include flexbox();
+      align-items: center;
+      padding: 25px 35px;
+      color: inherit;
+      font-weight: inherit;
+      transition: 0.2s ease;
+      background: color-mix(in srgb, var(--gray-color) 25%, $white 1%);
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .ext-tab__controller {
+    max-width: 400px;
+    margin: auto;
+  }
+}

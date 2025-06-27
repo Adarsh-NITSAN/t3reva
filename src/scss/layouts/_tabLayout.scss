@@ -1,0 +1,36 @@
+.tab-layout {
+  .nav {
+    display: block;
+  }
+  .nav-item .nav-link {
+    @extend %fontsize18;
+    font-weight: $medium-weight;
+    color: $text-muted-color;
+    padding: 20px 0;
+    border: 0;
+
+    &.active {
+      color: $primary-color;
+      background-color: transparent;
+      border-bottom: 2px solid $primary-color;
+
+      &:hover {
+        border-color: inherit;
+      }
+      &:focus-visible {
+        box-shadow: none;
+      }
+    }
+    &:hover {
+      color: $primary-color;
+      border-color: transparent;
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .tab-layout {
+    .nav {
+      @include flexbox();
+    }
+  }
+}

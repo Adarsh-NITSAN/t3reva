@@ -1,0 +1,133 @@
+.cta-default {
+  position: relative;
+  width: 100%;
+  // padding: 46px 0;
+  background-color: color-mix(in srgb, var(--gray-color) 25%, $white 100%);
+}
+
+.cta-default__content {
+  @include flexbox();
+  @include justify-content(space-between);
+  padding: 60px 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cta-text {
+  font-weight: $semibold-weight;
+}
+
+.cta-text-dark {
+  width: 100%;
+  color: $white;
+  margin-bottom: 30px;
+}
+
+.cta-parallax {
+  // @include abs-position(50%, 50%, initial, 50%);
+  @include flexbox();
+  position: relative;
+  padding: 20px;
+  // transform: translate(-50%, -50%);
+  width: 100%;
+
+  .cta-parallax__content {
+    width: 100%;
+    p {
+      @extend %fontsize20;
+    }
+  }
+
+  &.left-content {
+    @include justify-content(flex-end);
+  }
+
+  &.right-content {
+    @include justify-content(flex-start);
+  }
+
+  &.center-content {
+    @include justify-content(center);
+  }
+}
+
+.cta-container {
+  // @include flexbox();
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // width: 100%;
+  // height: 100%;
+  // padding: 50px;
+
+  &.left-content {
+    @include justify-content(flex-end);
+  }
+
+  &.right-content {
+    @include justify-content(flex-start);
+  }
+
+  &.center-content {
+    @include justify-content(center);
+  }
+
+  // .cta-container__content {
+  //   min-height: 400px;
+  // }
+}
+
+.react-parallax-content {
+  min-height: 610px;
+  display: flex;
+  align-items: center;
+}
+
+.react-parallax-bgimage {
+  object-fit: cover;
+  width: 100%;
+}
+
+.cta-parallax__content-image {
+  @include flexbox();
+  gap: 20px;
+  flex-direction: column;
+  // img {
+  //   width: 50%;
+  // }
+}
+@include media-breakpoint-up(md) {
+  .cta-text-dark {
+    width: auto;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .cta-parallax {
+    // width: 80%;
+    .cta-parallax__content {
+      width: 50%;
+    }
+
+    &.left-content {
+      @include justify-content(flex-end);
+    }
+
+    &.right-content {
+      @include justify-content(flex-start);
+    }
+
+    &.center-content {
+      @include justify-content(center);
+      .cta-parallax__content {
+        width: 100%;
+      }
+    }
+  }
+
+  .cta-parallax__content-image {
+    flex-direction: row;
+    // img {
+    //   width: 100%;
+    // }
+  }
+}

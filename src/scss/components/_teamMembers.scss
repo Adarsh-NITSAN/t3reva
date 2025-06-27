@@ -1,0 +1,142 @@
+.team-minimal {
+  text-align: center;
+
+  h4 {
+    margin: 20px 0;
+  }
+
+  p {
+    padding-bottom: 20px;
+  }
+
+  .team-content__image {
+    position: relative;
+    display: block;
+
+    .team-minimal__socials {
+      @include abs-position(0, initial, initial, 0);
+      bottom: -100%;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      margin-left: 0;
+      padding: 30px;
+      text-align: center;
+      opacity: 0;
+      border: 0;
+      box-shadow: none;
+      box-sizing: border-box;
+      transition: 0.2s cubic-bezier(0.2, 0.58, 0.55, 1);
+      z-index: 100;
+
+      &::before {
+        @include abs-position(0, initial, initial, 0);
+        width: 100%;
+        height: 100%;
+        content: '';
+        opacity: 0.4;
+        transition: 0.2s cubic-bezier(0.2, 0.58, 0.55, 1);
+        background: $secondary-color;
+      }
+
+      .team-minimal__socials-icon {
+        @include abs-position(auto, initial, initial, 0);
+        text-align: center;
+        margin: 0;
+        transition: 0.2s cubic-bezier(0.2, 0.58, 0.55, 1);
+        opacity: 0.5;
+        transform: translateY(-15px);
+        bottom: 30px;
+        width: 100%;
+        z-index: 101;
+
+        a {
+          opacity: 1;
+          background: $white;
+          width: 50px;
+          height: 50px;
+          display: inline-flex;
+          text-align: center;
+          line-height: 45px;
+          border-radius: 100%;
+          margin: 0 5px;
+          justify-content: center;
+          align-items: center;
+          svg {
+            color: $text-muted-color;
+          }
+
+          &:hover {
+            background: $secondary-color;
+
+            svg {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .team-minimal__socials {
+        opacity: 1;
+      }
+
+      .team-minimal__socials-icon {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.team-detailed {
+  background-color: $white;
+  text-align: center;
+
+  .team-detailed__image {
+    padding: 15px 15px 0;
+  }
+
+  .team-detailed__content {
+    width: 75%;
+    margin: auto;
+
+    h4 {
+      margin: 20px 0;
+    }
+
+    p {
+      margin-bottom: 0;
+      padding-bottom: 20px;
+    }
+  }
+
+  .team-detailed__socials-icon {
+    padding-bottom: 15px;
+
+    a {
+      opacity: 1;
+      background: color-mix(in srgb, var(--gray-color) 25%, $white 1%);
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 100%;
+      margin: 0 5px;
+
+      svg {
+        color: $black;
+      }
+
+      &:hover {
+        background: $primary-color;
+
+        svg {
+          color: $white;
+        }
+      }
+    }
+  }
+}

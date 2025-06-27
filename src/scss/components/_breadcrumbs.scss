@@ -1,0 +1,13 @@
+.breadcrumbs {
+  @extend %fontsize16;
+  text-align: center;
+  color: $text-muted-color;
+  a {
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  .breadcrumbs-separator {
+    margin: 0 3px;
+  }
+}

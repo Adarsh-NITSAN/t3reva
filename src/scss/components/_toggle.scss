@@ -1,0 +1,75 @@
+.accordiondata-item {
+  border-radius: 0 !important;
+  margin-bottom: 15px;
+  color: $text-muted-color;
+
+  &.accordion-item {
+    border: 1px solid color-mix(in srgb, var(--text-color) 20%, $white 1%);
+  }
+
+  .accordiondata-header {
+    .accordion-button {
+      @extend %fontsize18;
+      color: $secondary-color;
+      font-weight: $medium-weight;
+      &.collapsed {
+        &:before,
+        &:after {
+          @extend %fontsize14;
+          @include abs-position(50%, initial, initial, initial);
+          font-weight: $regular-weight;
+          color: inherit;
+          content: '';
+          // margin: -1px 0 0 0;
+          display: block;
+          width: 10px;
+          height: 2px;
+          background: $text-muted-color;
+          right: 0;
+          line-height: 14px;
+          right: 15px;
+          transition: 0.3s cubic-bezier(0.5, 0.58, 0.55, 1);
+        }
+
+        &:after {
+          transform: rotate(90deg);
+          margin-top: 0;
+        }
+      }
+
+      &:after {
+        @extend %fontsize14;
+        @include abs-position(50%, initial, initial, initial);
+        font-weight: $regular-weight;
+        color: inherit;
+        content: '';
+        margin: -1px 0 0 0;
+        display: block;
+        width: 10px;
+        height: 2px;
+        background: $text-muted-color;
+        right: 0;
+        line-height: 14px;
+        right: 15px;
+        transition: 0.3s cubic-bezier(0.5, 0.58, 0.55, 1);
+        transform: rotate(1deg);
+      }
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    button {
+      padding: 20px 30px;
+      background-color: inherit;
+      box-shadow: none;
+      line-height: initial;
+    }
+  }
+  .accordion-body {
+    @extend %fontsize18;
+    font-family: var(--font-brandon);
+    padding: 0 70px 25px 30px;
+  }
+}

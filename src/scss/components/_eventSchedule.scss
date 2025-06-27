@@ -1,0 +1,139 @@
+.event-schedule {
+  .accordion-item {
+    border: 0;
+    border-top: 1px solid $border-color;
+    border-radius: 0px;
+    background-color: transparent;
+  }
+
+  .accordion-header .accordion-button {
+    display: block;
+    background-color: transparent;
+    box-shadow: none;
+    text-align: center;
+
+    .event-time {
+      @extend %fontsize18;
+      @include flexbox();
+      font-weight: $medium-weight;
+      color: $secondary-color;
+      opacity: 0.8;
+      align-items: center;
+      min-width: 200px;
+
+      svg {
+        color: $secondary-color;
+        margin-right: 10px;
+      }
+    }
+
+    h4 {
+      @extend %fontsize18;
+      font-weight: $medium-weight;
+      color: $secondary-color;
+      margin: 0;
+      opacity: 1;
+      text-align: left;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    &:focus,
+    &:focus-visible {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .accordion-body {
+    @extend %fontsize18;
+    display: block;
+    font-weight: $medium-weight;
+    text-align: left;
+
+    .event-handler {
+      display: inline-block;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 50px 20px 0;
+    }
+
+    .event-speaker {
+      max-width: 50px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+
+      img {
+        height: 50px;
+        width: 50px;
+        // object-fit: cover;
+        object-fit: contain;
+        border-radius: 100%;
+      }
+    }
+
+    .event-speaker-name {
+      color: $primary-color;
+      margin-bottom: 5px;
+    }
+
+    .event-speaker-post {
+      color: $text-muted-color;
+      margin-bottom: 20px;
+    }
+    .event-speaker-name,
+    .event-speaker-post {
+      @extend %fontsize18;
+      font-weight: $medium-weight;
+    }
+
+    .event-description {
+      @extend %fontsize14;
+      margin-bottom: 5px;
+      max-width: 100%;
+
+      p {
+        @extend %fontsize20;
+        font-weight: $regular-weight;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .accordion-collapse .accordion-body {
+    // padding: 0;
+    .accordion-header .accordion-button {
+      @include flexbox();
+      position: relative;
+      flex-direction: column;
+      padding: 16px 20px 16px 0;
+      align-items: flex-start;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 25%;
+        right: 0;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .event-schedule {
+    .accordion-header .accordion-button {
+      padding: 16px 20px;
+      @include flexbox();
+    }
+
+    .accordion-body {
+      @include flexbox();
+      .event-handler {
+        max-width: 150px;
+      }
+
+      .event-description {
+        max-width: calc(100% - 250px);
+      }
+    }
+  }
+}

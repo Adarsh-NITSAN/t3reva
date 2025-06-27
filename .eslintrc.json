@@ -1,0 +1,10 @@
+{
+  "extends": ["next", "plugin:prettier/recommended", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      { "usePrettierrc": true, "endOfLine": "auto" }
+    ]
+  }
+}

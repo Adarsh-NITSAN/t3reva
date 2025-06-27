@@ -1,0 +1,37 @@
+.menu_pages,
+.menu_sub_pages {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: $bold-weight;
+  }
+  ul {
+    li {
+      width: 100%;
+
+      a {
+        position: relative;
+        padding-bottom: 6px;
+        line-height: 40px;
+
+        &::after {
+          @include abs-position(initial, initial, 0, 0);
+          content: '';
+          background-color: $primary-color;
+          transition: 0.3s all ease;
+          height: 2px;
+          width: 0;
+        }
+
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

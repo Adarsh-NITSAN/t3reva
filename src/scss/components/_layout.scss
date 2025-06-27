@@ -1,0 +1,25 @@
+.wrapper {
+  // margin-bottom: 0;
+  padding-bottom: 0;
+  position: relative;
+  top: 0;
+  z-index: 10;
+  background-color: $white;
+  // padding-top: 120px;
+
+  .vertical-lines {
+    background-image: none;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .wrapper {
+    min-height: calc(100vh - 65px);
+  }
+
+  .vertical-lines {
+    background-image: url('../../assets/images/icons/vertical-lines.svg');
+    background-repeat: repeat;
+    background-position: 100%;
+  }
+}

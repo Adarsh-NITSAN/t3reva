@@ -1,0 +1,60 @@
+.alert-box {
+  @include flexbox();
+  @include align-items(center);
+  background: color-mix(in srgb, var(--gray-color) 30%, $white 100%);
+  border: 1px solid $border-color;
+  margin-bottom: 30px;
+  padding: 30px 55px 30px 98px;
+  position: relative;
+  max-width: 100%;
+  &.alert-box-warning {
+    color: $warning-color;
+  }
+
+  &.alert-box-error {
+    color: $error-color;
+  }
+
+  &.alert-box-info {
+    color: $primary-color;
+  }
+
+  &.alert-box-success {
+    color: $success-color;
+  }
+
+  .alert-box__icon {
+    @include abs-position(auto, initial, initial, 0);
+    font-weight: $regular-weight;
+    text-align: center;
+    max-height: 85px;
+    width: 100px;
+
+    img {
+      // max-height: inherit;
+      // max-width: inherit;
+      max-height: 30px;
+      max-width: 30px;
+    }
+  }
+
+  .alert-box__icon-message {
+    @extend %fontsize16;
+    font-weight: $medium-weight;
+    display: inline-block;
+    letter-spacing: 1.6px;
+  }
+
+  .alert-box__close-icon {
+    @include abs-position(50%, 35px, initial, initial);
+    color: inherit;
+    transform: translateY(-15px);
+    border: 0;
+    background-color: transparent;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

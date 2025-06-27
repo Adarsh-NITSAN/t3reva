@@ -1,0 +1,44 @@
+.circular-progressbar__circle {
+  position: relative;
+
+  .circular-progressbar__circle-stroke {
+    position: relative;
+
+    .circular-progressbar__circle-stroke-main {
+      stroke: $primary-color;
+    }
+  }
+
+  .circular-progressbar__circle-title {
+    @include abs-position(50%, initial, initial, 50%);
+    @include flexbox();
+    transform: translate(-50%, -50%);
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    box-shadow: 0 5px 70px color-mix(in srgb, var(--text-color) 20%, $white 1%);
+    border: 2px solid color-mix(in srgb, var(--text-color) 20%, $white 1%);
+    margin: auto;
+    h2 {
+      @extend %fontsize32;
+      transition: all 0.5s;
+    }
+  }
+}
+
+.circular-progressbar {
+  text-align: center;
+}
+
+.circular-progressbar__text {
+  text-align: center;
+
+  h4 {
+    @extend %fontsize24;
+    font-weight: $medium-weight;
+    margin: 20px 0;
+  }
+}

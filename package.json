@@ -1,0 +1,41 @@
+{
+  "name": "t3bootstrap-headless",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.24",
+    "@formatjs/intl-localematcher": "^0.4.2",
+    "@react-spring/web": "^9.7.3",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.1",
+    "dompurify": "^3.0.6",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-next": "13.4.19",
+    "eslint-plugin-prettier": "^5.0.1",
+    "holy-loader": "^2.2.1",
+    "moment": "^2.29.4",
+    "negotiator": "^0.6.3",
+    "next": "^14.0.3",
+    "next-intl": "^3.1.2",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-compare-slider": "^2.2.0",
+    "react-cookie-consent": "^9.0.0",
+    "react-countdown": "^2.3.5",
+    "react-countup": "^6.4.2",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.46.2",
+    "react-parallax": "^3.5.1",
+    "react-player": "^2.13.0",
+    "react-responsive-masonry": "^2.1.7",
+    "react-scroll": "^1.8.9",
+    "sass": "^1.69.7",
+    "swiper": "^11.0.5"
+  }
+}

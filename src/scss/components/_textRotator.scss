@@ -1,0 +1,85 @@
+.text-rotator {
+  position: relative;
+  display: block;
+}
+.text-rotator__container {
+  position: relative;
+  margin-bottom: 20px;
+
+  .text-rotator__wrapper {
+    position: relative;
+    overflow: hidden;
+    vertical-align: top;
+    padding-bottom: 10px;
+    text-align: left;
+    display: inline-block;
+    perspective: 200px;
+
+    .text-rotator__single {
+      @include abs-position(0, initial, initial, 0);
+      white-space: nowrap;
+
+      &.is-visible {
+        opacity: 1;
+        top: 0;
+      }
+
+      &.is-hidden {
+        opacity: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &.slider {
+    .text-rotator__single {
+      display: inline-block;
+
+      &.is-visible {
+        position: relative;
+        animation: slide-in 0.6s;
+      }
+
+      &.is-hidden {
+        position: absolute;
+        animation: slide-out 0.6s;
+      }
+    }
+  }
+
+  &.zoom {
+    .text-rotator__single {
+      &.is-visible {
+        position: relative;
+        animation: zoom-in 0.6s;
+      }
+
+      &.is-hidden {
+        position: absolute;
+        animation: zoom-out 0.6s;
+      }
+    }
+  }
+
+  &.push {
+    .text-rotator__single {
+      display: inline-block;
+
+      &.is-visible {
+        position: relative;
+        animation: push-in 0.6s;
+      }
+
+      &.is-hidden {
+        position: absolute;
+        animation: push-out 0.6s;
+      }
+    }
+  }
+}
+
+.text-rotator__button {
+  @include flexbox();
+  align-items: center;
+  justify-content: center;
+}

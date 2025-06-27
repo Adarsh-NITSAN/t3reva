@@ -1,0 +1,153 @@
+.navbar-sections {
+  overflow: hidden;
+}
+
+.nav-indicator {
+  background-color: $primary-color;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  transition: all ease-in-out 0.5s;
+  transform: translateX(0%);
+}
+
+.navbar-sections-tabs {
+  background: $white;
+  text-align: center;
+  position: relative;
+  top: 0;
+  z-index: 100;
+  padding: 0;
+  // margin-bottom: 50px;
+  transition: 0.5s;
+  border-bottom: 1px solid $border-color;
+
+  nav {
+    ul {
+      @include flexbox();
+      border: 0;
+      text-align: center;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+      padding: 0;
+      width: 100%;
+      position: relative;
+      margin: auto;
+
+      li {
+        @extend %fontsize18;
+        width: 100%;
+        padding: 0 20px;
+
+        a {
+          padding: 20px 0;
+          display: inline-flex;
+          cursor: pointer;
+          align-items: center;
+
+          .nav-number {
+            @extend %fontsize14;
+            background-color: $primary-color;
+            font-weight: $medium-weight;
+            line-height: 20px;
+            min-width: 22px;
+            width: 22px;
+            height: 22px;
+            color: $white;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+          }
+          img {
+            margin-right: 15px;
+            max-width: 12%;
+          }
+
+          &:hover {
+            color: $primary-color !important;
+          }
+        }
+
+        @for $i from 2 through 6 {
+          &:nth-child(#{$i}) {
+            &.active-section {
+              ~ .nav-indicator {
+                transform: translateX(#{($i - 1) * 100%});
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar-sections {
+  padding: 50px 0 0 0;
+  .row {
+    align-items: center;
+  }
+
+  .navbar-section__content {
+    width: 100%;
+    margin: auto;
+    padding-bottom: 50px;
+
+    h6 {
+      margin: 25px 0;
+    }
+    ul {
+      li {
+        @include flexbox();
+        align-items: center;
+        gap: 10px;
+        &:before {
+          mask: url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C!--!Font%20Awesome%20Free%206.5.1%20by%20%40fontawesome%20-%20https%3A%2F%2Ffontawesome.com%20License%20-%20https%3A%2F%2Ffontawesome.com%2Flicense%2Ffree%20Copyright%202023%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%20100-512%20256%20256%200%20100%20512zm113-303L241%20337c-9.4%209.4-24.6%209.4-33.9%200l-64-64c-9.4-9.4-9.4-24.6%200-33.9s24.6-9.4%2033.9%200l47%2047L335%20175c9.4-9.4%2024.6-9.4%2033.9%200s9.4%2024.6%200%2033.9z%22%2F%3E%3C%2Fsvg%3E');
+          content: '';
+          background-color: $primary-color;
+          width: 30px;
+          height: 30px;
+          mask-repeat: no-repeat;
+          transform: scale(0.6);
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .navbar-section__image {
+    text-align: center;
+    img {
+      border-radius: 5%;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .navbar-sections-tabs {
+    // margin-bottom: 100px;
+    top: 85px;
+    position: sticky;
+
+    nav {
+      ul {
+        flex-direction: row;
+        .nav-indicator {
+          height: 4px;
+        }
+      }
+    }
+  }
+
+  .navbar-sections {
+    padding: 100px 0 0;
+    overflow: visible !important;
+    .navbar-section__content {
+      padding-bottom: 20px;
+    }
+  }
+}

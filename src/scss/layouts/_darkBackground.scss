@@ -1,0 +1,477 @@
+// Dark bg
+.section--bg-dark-color {
+  .reviews {
+    .reviews-box {
+      background-color: $white;
+    }
+    .review-carousel {
+      .review-item {
+        &::after,
+        &::before {
+          background: none;
+        }
+      }
+    }
+  }
+  &.bg-dark-overlay {
+    .clients,
+    .headings,
+    .countdown,
+    .progressBar,
+    .circular-progressbar,
+    .testimonial-items,
+    .text-rotator,
+    .gallery-grid__container,
+    .icon-list,
+    .cta,
+    .ce-text,
+    .image-comparison__text,
+    .counter {
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      span {
+        color: $white;
+      }
+    }
+
+    .photo-group-section,
+    .navbar-sections {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $white;
+      }
+    }
+    .bulletlist {
+      li {
+        color: $white;
+      }
+    }
+    .photo-box-container,
+    .process-staps-section {
+      h4,
+      p {
+        color: $white;
+      }
+      a {
+        &:hover {
+          h4 {
+            color: $primary-color;
+          }
+        }
+      }
+      .process-steps-content__link {
+        color: $white;
+
+        &::after {
+          background-color: $white;
+        }
+      }
+      .process-stapes__col {
+        &:hover {
+          a {
+            color: $white;
+          }
+        }
+      }
+      .container-text__link {
+        &:hover {
+          color: $white;
+          svg {
+            color: $white;
+          }
+        }
+      }
+    }
+    .pricing-list {
+      .price-block-content__dots,
+      .pricing-content__price,
+      p,
+      a,
+      h4 {
+        color: $white;
+        svg {
+          color: $white;
+        }
+      }
+      &.accordiondata {
+        a,
+        p {
+          color: initial;
+        }
+        h4 {
+          color: $secondary-color;
+          &.pricing-content__price {
+            color: $primary-color;
+          }
+          svg {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    .pricing-comparison {
+      h2,
+      h6 {
+        color: $white;
+      }
+    }
+    .pricing-heading {
+      h2,
+      p {
+        color: $white;
+      }
+    }
+
+    .progressBar {
+      .progressBar-full {
+        background: rgba($white, 3%);
+      }
+    }
+    .tablayout,
+    .tab-layout {
+      .nav-item .nav-link {
+        color: $white;
+      }
+    }
+    .contenttab {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        color: $white;
+      }
+    }
+    .list-icon-box {
+      &:hover {
+        background-color: color-mix(
+          in srgb,
+          var(--secondary-color) 100%,
+          $white 1%
+        );
+
+        .list-icon-box__text {
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          p,
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    blockquote {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      p,
+      span {
+        color: $secondary-color;
+      }
+    }
+    .app-gallery-content__content {
+      background-color: $secondary-color;
+    }
+  }
+
+  // .pricing-list {
+  //   h1,
+  //   h2,
+  //   h3,
+  //   h4,
+  //   h5,
+  //   h6,
+  //   p,
+  //   .price-block
+  //     .price-block__content
+  //     .price-block-content__pricing-content
+  //     .pricing-content__price {
+  //     color: $white;
+  //   }
+  //   .accordion-item {
+  //     background-color: transparent;
+  //     border: 0px;
+  //   }
+
+  //   .accordiondata-header {
+  //     background-color: $white;
+  //   }
+  //   .nav-item {
+  //     .nav-link {
+  //       &:after {
+  //         content: '';
+  //         background: transparent;
+  //       }
+  //     }
+  //   }
+  // }
+}
+
+.bg-primary-color,
+.bg-dark-color {
+  .footer-bar .footer-nav ul li a {
+    &:hover {
+      color: $white !important;
+      &::after {
+        background-color: $white;
+      }
+    }
+  }
+  .menu_pages {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: $bold-weight;
+    }
+    ul li a {
+      &:hover {
+        &::after {
+          background-color: $white;
+        }
+      }
+    }
+  }
+  .custom-form {
+    &.modern-newslatter {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: $bold-weight;
+      }
+    }
+    .custom-form-control-wrap {
+      .type-text {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+// Gray bg
+.section--bg-gray-color {
+  .reviews {
+    .reviews-box {
+      background-color: $white;
+    }
+
+    .review-item {
+      .owl-stage-outer::after {
+        background: color-mix(in srgb, var(--gray-color) 25%, $white 1%);
+        mask: linear-gradient(90deg, $white, transparent);
+        // background: linear-gradient(90deg, $gray-color 0%, transparent);
+      }
+
+      .owl-stage-outer::before {
+        mask: linear-gradient(270deg, $white, transparent);
+        background: color-mix(in srgb, var(--gray-color) 25%, $white 1%);
+        // background: linear-gradient(275deg, $gray-color 0%, transparent);
+      }
+    }
+  }
+
+  .ext-tab__controller li a {
+    background: $white;
+  }
+
+  &.list-icon-box {
+    .bg-gray-color {
+      background-color: transparent;
+    }
+  }
+
+  .app-gallery-content__content {
+    background-color: color-mix(in srgb, var(--gray-color) 30%, $white 100%);
+  }
+}
+
+//Image bg
+.section--bg-image {
+  .reviews {
+    .reviews-box {
+      background-color: $white;
+    }
+    .review-carousel {
+      .review-item {
+        &::after,
+        &::before {
+          background: none;
+        }
+      }
+    }
+  }
+
+  &.bg-image-overlay {
+    .cta,
+    .progressBar,
+    .circular-progressbar,
+    .icon-list,
+    .ce-text,
+    .clients,
+    .countdown,
+    .headings,
+    .text-rotator,
+    .testimonial-items,
+    .counter,
+    .gallery-grid__container {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span {
+        color: $white;
+      }
+    }
+
+    .bulletlist {
+      li {
+        color: $white;
+      }
+    }
+
+    .photo-group-section,
+    .navbar-sections {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $white;
+      }
+    }
+
+    .progressBar {
+      .progressBar-full {
+        background: rgba($white, 30%);
+      }
+    }
+
+    .tablayout,
+    .tab-layout {
+      .nav-item .nav-link {
+        color: $white;
+      }
+    }
+
+    .contenttab {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        color: $white;
+      }
+    }
+
+    .list-icon-box {
+      &:hover {
+        background-color: color-mix(
+          in srgb,
+          var(--secondary-color) 100%,
+          $white 1%
+        );
+
+        .list-icon-box__text {
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          p,
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .pricing-comparison {
+      h2,
+      h6 {
+        color: $white;
+      }
+    }
+
+    .pricing-heading {
+      h2,
+      p {
+        color: $white;
+      }
+    }
+
+    .pricing-list {
+      .price-block-content__dots,
+      p,
+      a {
+        color: $white;
+      }
+      &.accordiondata {
+        a,
+        p {
+          color: initial;
+        }
+      }
+    }
+
+    .photo-box-container,
+    .process-staps-section {
+      h4,
+      p {
+        color: $white;
+      }
+      a {
+        &:hover {
+          h4 {
+            color: $primary-color;
+          }
+        }
+      }
+      .process-stapes__col,
+      .minimal-pss__col {
+        &:hover {
+          a {
+            color: $white;
+          }
+        }
+      }
+
+      .container-text__link {
+        &:hover {
+          color: $white;
+          svg {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

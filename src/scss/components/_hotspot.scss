@@ -1,0 +1,195 @@
+.hotspot {
+  position: relative;
+  overflow: hidden;
+}
+
+.hotspot-overlay {
+  position: relative;
+}
+
+.hotspot-item {
+  position: absolute;
+  margin: -18px auto auto -18px;
+  z-index: 15;
+
+  &:hover {
+    z-index: 99;
+    .hotspot-item__tooltip-content {
+      opacity: 0;
+      visibility: visible;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .hotspot-item__tooltip-content {
+    position: absolute;
+    max-width: 270px;
+    background-color: $white;
+    padding: 30px;
+    padding-bottom: 5px;
+    overflow: hidden;
+    transition:
+      transform 0.8s,
+      opacity 0.8s,
+      visibility 0.5s;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 15px);
+    left: 16px;
+    width: max-content;
+    border-radius: 0;
+    border: 1px solid $gray-color;
+
+    h4 {
+      text-transform: inherit;
+      font-family: inherit;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.hotspot-item__tooltip {
+  @extend %fontsize16;
+  font-weight: $semibold-weight;
+  background: $primary-color;
+  height: 32px;
+  width: 32px;
+  justify-content: center;
+  display: inline-flex;
+  line-height: 32px;
+  border-radius: 100%;
+  color: $secondary-color;
+  align-items: center;
+
+  .tooltip__icon {
+    @extend %fontsize14;
+    color: $gray-color;
+  }
+}
+
+.hotspot-item {
+  &.enable-pulse {
+    .hotspot-item__tooltip::before {
+      @include abs-position(0, 0, 0, 0);
+      content: '';
+      display: block;
+      z-index: -1;
+      transform: scale(1);
+      border-radius: 100%;
+      pointer-events: none;
+      animation: pulse-animation 2s ease-in-out;
+      animation-iteration-count: infinite;
+      opacity: 0;
+      border: 0;
+      background: $primary-color;
+    }
+  }
+}
+
+.tooltip-top .hotspot-item__tooltip-content {
+  bottom: 100%;
+  margin-bottom: 20px;
+}
+
+.tooltip-bottom .hotspot-item__tooltip-content {
+  top: 100%;
+}
+
+.tooltip-bottom .hotspot-item__tooltip-content {
+  top: 52px;
+}
+
+.hotspot-item {
+  &.tooltip-right {
+    .hotspot-item__tooltip-content {
+      left: 32px;
+      top: 16px;
+      transform: translate(0, -50%);
+    }
+
+    &:hover {
+      .hotspot-item__tooltip-content {
+        transform: translate(15px, -50%);
+      }
+    }
+  }
+
+  &.tooltip-left {
+    .hotspot-item__tooltip-content {
+      right: 32px;
+      left: auto;
+      top: 16px;
+      transform: translate(0, -50%);
+    }
+
+    &:hover {
+      .hotspot-item__tooltip-content {
+        transform: translate(-15px, -50%);
+      }
+    }
+  }
+}
+
+.hotspot__mobile {
+  display: block;
+  position: relative;
+
+  .hotspot-mobile__tooltip {
+    display: none;
+    &.active-tooltip {
+      display: block;
+    }
+    .tooltip__content {
+      background-color: $white;
+      padding: 30px;
+      padding-bottom: 3px;
+      margin: 10px 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .hotspot-item__tooltip-content {
+    max-width: 210px;
+    padding: 10px;
+  }
+  .hotspot-item:hover {
+    .hotspot-item__tooltip-content {
+      opacity: 1;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .hotspot {
+    overflow: unset;
+  }
+}
+
+//animation
+@keyframes pulse-animation {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.hotspot {
+  align-items: center;
+}
+
+.hotspot-overlayer {
+  position: absolute;
+}

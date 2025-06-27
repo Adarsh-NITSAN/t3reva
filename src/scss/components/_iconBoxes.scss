@@ -1,0 +1,156 @@
+.list-icon-box {
+  @include flexbox();
+  padding-left: 40px;
+  padding-right: 40px;
+  gap: 5px;
+  border: 1px solid;
+  border-color: rgba($black, 10%);
+  // overflow: hidden;
+
+  .icon-box-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 0px;
+    color: $black;
+
+    svg {
+      color: $black;
+      transform: translate3d(0, 0, 0);
+      transition: transform 0.2s cubic-bezier(0.5, 0.58, 0.55, 1);
+      margin-left: 3px;
+    }
+
+    &:hover {
+      svg {
+        transform: translate3d(5px, 0, 0);
+      }
+    }
+  }
+
+  &:hover {
+    .icon-box-link,
+    .icon-box-link svg {
+      color: $primary-color;
+    }
+  }
+}
+
+.list-icon-box__text {
+  h4 {
+    // @extend %fontsize20;
+    font-weight: $medium-weight;
+    color: $secondary-color;
+    margin-bottom: 20px;
+    hyphens: auto;
+  }
+
+  .icon-box-text__link {
+    margin-top: 35px;
+  }
+
+  p {
+    hyphens: auto;
+    @extend %fontsize20;
+  }
+
+  ul li {
+    hyphens: auto;
+  }
+}
+
+.list-icon-box__list {
+  color: $text-muted-color;
+  margin-bottom: 10px;
+}
+
+.icon-box-white {
+  &:hover {
+    background-color: $white;
+  }
+}
+
+.icon-box-gradient {
+  &:hover {
+    background: linear-gradient(90deg, $primary-color 0%, $tertiary-color 100%);
+    transition: 1s cubic-bezier(0.25, 1, 0.2, 1);
+
+    h4 {
+      color: $white;
+    }
+
+    p {
+      color: $white;
+    }
+
+    li {
+      color: $white;
+    }
+
+    .icon-box-link {
+      color: $white;
+
+      svg {
+        color: $white;
+      }
+    }
+  }
+}
+
+.icon-box-animated:hover {
+  background: url('../../assets/images/iconbox-bg.jpg');
+  background-repeat: round;
+  background-size: cover;
+  width: 100%;
+  transition: 1s cubic-bezier(0.25, 1, 0.2, 1);
+}
+
+.list-icon-box__list {
+  @include flexbox();
+  gap: 10px;
+  align-items: center;
+  svg,
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.list-icon-box__icon {
+  width: 65px;
+  height: 65px;
+  padding: 0 18px;
+  margin-bottom: 20px;
+  &.bg-light-color,
+  &.bg-gray-color,
+  &.bg-primary-color {
+    padding: 18px;
+  }
+  &.bg-none {
+    padding: 0;
+  }
+
+  // img {
+  //   display: block;
+  //   // max-width: 30px;
+  // }
+}
+
+.horizontal-icon {
+  .list-icon-box__icon {
+    margin-right: 25px;
+    img {
+      max-width: 30px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .horizontal-icon {
+    .list-icon-box__icon {
+      img {
+        display: block;
+        max-width: 32px;
+      }
+    }
+  }
+}

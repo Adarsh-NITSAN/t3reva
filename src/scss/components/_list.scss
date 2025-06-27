@@ -1,0 +1,49 @@
+.icon-list {
+  padding: 0;
+
+  .icon-list__item {
+    @include flexbox();
+    color: $text-muted-color;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+
+    .icon-list__item-text {
+      @extend %fontsize20;
+      line-height: 20px;
+      font-family: var(--font-brandon);
+    }
+  }
+}
+
+.icon-list__item-list {
+  min-width: 20px;
+  height: 20px;
+  margin: 0 15px auto;
+  text-align: center;
+  line-height: 19px;
+  font-weight: $thin-weight;
+
+  svg {
+    @extend %fontsize12;
+  }
+  &.item-list-circle {
+    border-radius: 50%;
+  }
+
+  &.item-list-square {
+    border-radius: 0px;
+  }
+
+  &.item-list-circle,
+  &.item-list-square {
+    @extend %fontsize12;
+    line-height: 24px;
+    background: $primary-color;
+
+    svg {
+      vertical-align: inherit;
+    }
+  }
+}

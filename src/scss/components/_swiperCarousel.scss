@@ -1,0 +1,494 @@
+.swiper-slider {
+  position: static !important;
+  display: grid !important;
+}
+.swiper-slider [class^='swiper-button-'] {
+  inset: initial;
+  margin: 0;
+  align-self: center;
+}
+.swiper-slider {
+  .swiper-button-prev {
+    justify-self: start;
+    &::after {
+      content: url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2064%2064%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M54%2030H14.101l15.278-14.552a2%202%200%2010-2.759-2.897L9.172%2029.171A3.978%203.978%200%20008%2032c0%201.068.417%202.073%201.207%202.862l17.414%2016.586c.387.369.883.552%201.379.552a1.999%201.999%200%20001.38-3.448L14.038%2034H54a2%202%200%20000-4z%22%2F%3E%3C%2Fsvg%3E');
+    }
+  }
+  .swiper-button-next {
+    justify-self: end;
+
+    &::after {
+      content: url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M80%20240c-8.8%200-16%207.2-16%2016s7.2%2016%2016%2016h319.7L277%20388.4c-6.4%206.1-6.6%2016.2-.6%2022.6%203.1%203.3%207.4%205%2011.6%205%204%200%207.9-1.5%2011-4.4l139.3-132.7c6.3-6.3%209.7-14.4%209.7-22.9%200-8.6-3.3-16.6-9.4-22.6L299%20100.4c-6.4-6.1-16.5-5.8-22.6.6-6.1%206.4-5.8%2016.5.6%2022.6L399.2%20240H80z%22%2F%3E%3C%2Fsvg%3E');
+    }
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 100%;
+    transition: all 0.3s ease-in-out;
+    background-color: color-mix(in srgb, var(--gray-color) 15%, $white 100%);
+    &::after {
+      width: 20px;
+      height: 20px;
+      line-height: 0;
+    }
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+  .swiper-pagination {
+    inset: initial !important;
+    align-self: end;
+    justify-self: center;
+    display: none;
+    margin-bottom: -60px;
+    .swiper-pagination-bullet {
+      margin: auto 15px !important;
+      height: 12px;
+      width: 12px;
+      background-color: $primary-color;
+      opacity: 0.5;
+      &.swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.testimonial-items,
+.testimonial-cards-item,
+.testimonial-img-items,
+.teams,
+.review-carousel,
+.photo-box,
+.clients-items {
+  padding-bottom: 90px !important;
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 95%;
+  }
+  .swiper-button-next {
+    right: 35%;
+  }
+  .swiper-button-prev {
+    left: 35%;
+  }
+}
+
+.app-gallery {
+  min-height: 55rem;
+  .app-gallery-items {
+    .app-gallery__card-opacity,
+    .app-gallery__card {
+      overflow: hidden;
+      opacity: 1;
+      border-radius: 10px;
+      img {
+        border-radius: 30px;
+        max-width: 100%;
+        margin: auto;
+        display: block;
+      }
+    }
+    .swiper-pagination {
+      margin-bottom: -60px;
+      display: block;
+    }
+  }
+  .app-gallery__frame {
+    @include abs-position(initial, 0, initial, 0);
+    margin: auto;
+    z-index: 5;
+    pointer-events: none;
+    display: none;
+    width: 100%;
+  }
+  .app-gallery-content__content {
+    position: relative;
+    background: transparent;
+    margin-bottom: 50px;
+
+    .app-gallery__text {
+      text-align: center;
+      p {
+        @extend %fontsize20;
+      }
+    }
+  }
+}
+.sliding-blog {
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 90%;
+    width: 60px;
+    height: 60px;
+    opacity: 1;
+  }
+  .swiper-button-next {
+    right: 33%;
+  }
+  .swiper-button-prev {
+    left: 33%;
+  }
+}
+.photo-gallery {
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 90%;
+  }
+  .swiper-button-next {
+    right: 35%;
+  }
+  .swiper-button-prev {
+    left: 35%;
+  }
+}
+.clients {
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 80%;
+  }
+  .clients__headline {
+    @extend %fontsize14;
+    font-weight: $medium-weight;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .clients__icon {
+    width: 50%;
+    margin: auto;
+    transform: translate(0, -50%);
+    top: 50%;
+    position: relative;
+    img {
+      filter: grayscale(1);
+      transition: all ease-in-out 0.2s;
+      &:hover {
+        filter: grayscale(0);
+        transition: all ease-in-out 0.5s;
+        transform: translateY(-10px);
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .testimonial-items,
+  .testimonial-cards-item,
+  .testimonial-img-items,
+  .teams,
+  .review-carousel,
+  .photo-box,
+  .photo-gallery,
+  .clients-items {
+    .swiper-button-next {
+      right: 40%;
+    }
+    .swiper-button-prev {
+      left: 40%;
+    }
+  }
+  .sliding-blog {
+    .swiper-button-next {
+      right: 38%;
+    }
+    .swiper-button-prev {
+      left: 38%;
+    }
+  }
+}
+@include media-breakpoint-up(md) {
+  .testimonial-items,
+  .testimonial-cards-item,
+  .testimonial-img-items,
+  .teams,
+  .review-carouse,
+  .photo-box,
+  .photo-gallery,
+  .clients-items {
+    .swiper-button-next {
+      right: 43%;
+    }
+    .swiper-button-prev {
+      left: 43%;
+    }
+  }
+  .app-gallery {
+    .app-gallery__frame {
+      max-width: 141px;
+    }
+  }
+  .sliding-blog {
+    .swiper-button-next {
+      right: 40%;
+    }
+    .swiper-button-prev {
+      left: 40%;
+    }
+  }
+  .photo-gallery {
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: 94%;
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .swiper-slider {
+    .swiper-button-prev {
+      margin-left: -25px;
+    }
+    .swiper-button-next {
+      margin-right: -25px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      opacity: 0;
+      width: 60px;
+      height: 60px;
+      &.swiper-button-disabled {
+        opacity: 0;
+      }
+    }
+    .swiper-pagination {
+      display: block;
+    }
+
+    &:hover {
+      .swiper-button-next,
+      .swiper-button-prev {
+        opacity: 1;
+      }
+    }
+  }
+
+  .testimonial-items,
+  .testimonial-cards-item,
+  .teams,
+  .photo-box,
+  .clients-items {
+    padding-bottom: 0 !important;
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 50%;
+    }
+    .swiper-button-next {
+      right: 10%;
+    }
+    .swiper-button-prev {
+      left: 10%;
+    }
+
+    &:hover {
+      .swiper-button-next {
+        right: 0;
+      }
+      .swiper-button-prev {
+        left: 0;
+      }
+    }
+  }
+  .teams {
+    &.arrow-center {
+      .swiper-button-next,
+      .swiper-button-prev {
+        top: 37%;
+      }
+    }
+  }
+  .testimonials {
+    .testimonial-img-items {
+      .swiper-button-next,
+      .swiper-button-prev {
+        top: 65%;
+        opacity: 1;
+      }
+      .swiper-button-prev {
+        left: auto;
+        right: 22%;
+      }
+      .swiper-button-next {
+        right: 18%;
+      }
+    }
+  }
+  .review-carousel {
+    padding-bottom: 0;
+    .review-item {
+      &::after,
+      &::before {
+        content: '';
+        width: calc((100vw - 1195px) / 2);
+        height: 100%;
+        position: absolute;
+      }
+      &::after {
+        left: 0;
+        z-index: 5;
+        right: auto;
+        background-color: $white;
+        mask: linear-gradient(90deg, $white, transparent);
+      }
+      &::before {
+        z-index: 5;
+        right: 0;
+        left: auto;
+        background-color: $white;
+        mask: linear-gradient(270deg, $white, transparent);
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      opacity: 1;
+      top: -25%;
+    }
+    .swiper-button-prev {
+      left: auto;
+      right: 10%;
+    }
+    .swiper-button-next {
+      right: 6%;
+    }
+  }
+  .app-gallery {
+    .app-gallery-items {
+      .swiper-slide {
+        .app-gallery__card-opacity {
+          opacity: 0.5;
+        }
+        .app-gallery__card-opacity,
+        .app-gallery__card {
+          transition: all 0.3s ease-in-out;
+          img {
+            max-width: 292px;
+          }
+        }
+        &.swiper-slide-active {
+          .app-gallery__card,
+          .app-gallery__card-opacity {
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+    .app-gallery__frame {
+      max-width: 325px;
+      display: block;
+    }
+    .app-gallery__left-content {
+      z-index: unset;
+      position: relative;
+    }
+    .app-gallery-content__content {
+      @include abs-position(0, initial, initial, 0);
+      background: $white;
+      z-index: 4;
+      width: 37%;
+      height: 100%;
+      opacity: 1;
+      .app-gallery__text {
+        @include flexbox();
+        text-align: left;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        margin-left: 27%;
+        padding: 20px;
+      }
+    }
+  }
+  .sliding-blog {
+    .swiper-button-next {
+      right: 43%;
+    }
+    .swiper-button-prev {
+      left: 43%;
+    }
+  }
+  .photo-gallery {
+    .swiper-button-next {
+      top: 55%;
+      right: 20%;
+    }
+    .swiper-button-prev {
+      top: 55%;
+      left: 20%;
+    }
+    &:hover {
+      .swiper-button-next {
+        right: 10%;
+      }
+      .swiper-button-prev {
+        left: 10%;
+      }
+    }
+    .swiper-slide {
+      .slider-card,
+      .slider-card__over-layer {
+        transition: all 0.3s ease-in-out;
+      }
+      .slider-card__over-layer {
+        opacity: 0.5;
+      }
+      .slider-card {
+        opacity: 1;
+      }
+      &.swiper-slide-active {
+        .slider-card,
+        .slider-card__over-layer {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-up(xl) {
+  .sliding-blog {
+    .swiper-button-next,
+    .swiper-button-prev {
+      opacity: 1;
+      &.swiper-button-disabled {
+        opacity: 1;
+      }
+    }
+    .swiper-button-next {
+      top: 40%;
+      left: -6%;
+      right: auto;
+    }
+    .swiper-button-prev {
+      top: 60%;
+      left: -4%;
+    }
+  }
+  .photo-gallery {
+    &:hover {
+      .swiper-button-next {
+        right: 13%;
+      }
+      .swiper-button-prev {
+        left: 13%;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .testimonial-items,
+  .testimonial-cards-item,
+  .teams,
+  .photo-box,
+  .clients-items {
+    &:hover {
+      .swiper-button-next {
+        right: -5%;
+      }
+      .swiper-button-prev {
+        left: -5%;
+      }
+    }
+  }
+}
