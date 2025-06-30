@@ -22,19 +22,6 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
-  i18n: {
-    locales: ['en', 'de'], // Adjust these based on your actual locales
-    defaultLocale: 'en',
-  },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/en',
-        permanent: true,
-      },
-    ];
-  },
 };
 
 module.exports = withNextIntl(nextConfig);
