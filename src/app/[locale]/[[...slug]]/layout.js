@@ -12,6 +12,9 @@ import '../../../../node_modules/swiper/modules/navigation.css'
 import 'aos/dist/aos.css'
 import '@/scss/main.scss'
 
+// Force dynamic rendering to avoid static generation issues
+export const dynamic = 'force-dynamic'
+
 const sofia_pro_font = localFont({
   src: [
     {

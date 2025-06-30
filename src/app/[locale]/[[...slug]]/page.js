@@ -7,10 +7,13 @@ import { draftMode } from 'next/headers'
 import ContentType from '@/utils/contentType'
 import { Col, Container, Row } from 'react-bootstrap'
 import Breadcrumb from '@/components/Breadcrumb'
-import dynamic from 'next/dynamic'
+import dynamicImport from 'next/dynamic'
 import DetailsBlog from '@/components/Blog/DetailsBlog'
 import RenderComponents from '@/utils/RenderComponents'
-const HolyLoader = dynamic(() => import('holy-loader'), { ssr: false })
+const HolyLoader = dynamicImport(() => import('holy-loader'), { ssr: false })
+
+// Force dynamic rendering to avoid static generation issues
+export const dynamic = 'force-dynamic'
 
 export async function generateStaticParams() {
   let pageRoutes = []
