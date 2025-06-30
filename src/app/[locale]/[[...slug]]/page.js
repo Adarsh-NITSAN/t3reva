@@ -1,4 +1,5 @@
 import React from 'react'
+import { notFound } from 'next/navigation'
 import { i18n } from '../../../../i18n-config'
 import Routes from '@/utils/Routes'
 import getAPIData from '@/utils/GetData'
@@ -74,25 +75,27 @@ const getAllData = async (params, searchParams) => {
   if (string.includes('?search_query')) {
     string = ''
   }
-  pageData = await getAPIData(
-    `${locale === defaultLocale ? '' : `${locale}/`}${
+
+  const apiPath = `${locale === defaultLocale ? '' : `${locale}/`}${
+    paramSlug
+      ? searchParams && Object.keys(searchParams).length
+        ? paramSlug + string.slice(0, -1)
+        : paramSlug
+      : ''
+  }`
+
+  pageData = await getAPIData(apiPath || '/')
+
+  if (isEnabled) {
+    const draftApiPath = `${locale === defaultLocale ? '' : `${locale}/`}${
       paramSlug
         ? searchParams && Object.keys(searchParams).length
           ? paramSlug + string.slice(0, -1)
           : paramSlug
         : ''
     }`
-  )
-  if (isEnabled) {
-    pageData = await getAPIData(
-      `${locale === defaultLocale ? '' : `${locale}/`}${
-        paramSlug
-          ? searchParams && Object.keys(searchParams).length
-            ? paramSlug + string.slice(0, -1)
-            : paramSlug
-          : ''
-      }`
-    )
+
+    pageData = await getAPIData(draftApiPath || '/')
   }
   if (!pageData.error && pageData.data === 404) {
     notFound()

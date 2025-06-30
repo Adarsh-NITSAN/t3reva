@@ -1,6 +1,5 @@
 import localFont from 'next/font/local'
 import { notFound } from 'next/navigation'
-import { unstable_setRequestLocale } from 'next-intl/server'
 import { GlobalProvider } from '@/context/GlobalContext'
 import { i18n } from '../../../../i18n-config'
 import Layout from '@/components/Layout'
@@ -176,11 +175,11 @@ const getAllData = async (params) => {
     }
   }
 
-  pageData = await getAPIData(
-    `${locale === defaultLocale ? '' : `${locale}/`}${
-      paramSlug ? paramSlug : ''
-    }`
-  )
+  const apiPath = `${locale === defaultLocale ? '' : `${locale}/`}${
+    paramSlug ? paramSlug : ''
+  }`
+
+  pageData = await getAPIData(apiPath || '/')
 
   return {
     pageData,
@@ -199,7 +198,6 @@ export default async function LocaleLayout({ children, params }) {
   }
   if (!locales.includes(locale)) notFound()
 
-  unstable_setRequestLocale(locale)
   return (
     <html
       lang={locale}

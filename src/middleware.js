@@ -1,10 +1,7 @@
 import { NextResponse } from 'next/server'
-import createMiddleware from 'next-intl/middleware'
 import { i18n } from '../i18n-config'
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
-
-export default createMiddleware(i18n)
 
 export const config = {
   // Skip all paths that should not be internationalized. This example skips the

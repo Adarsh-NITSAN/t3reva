@@ -163,7 +163,8 @@ const getRoutes = (menuData, lang) => {
 }
 
 export const Routes = async ({ locale, defaultLocale }) => {
-  const menuData = await getAPIData(`${locale !== 'en' ? locale : ''}`)
+  const apiPath = locale !== 'en' ? locale : ''
+  const menuData = await getAPIData(apiPath || '/')
   let pages = [
     {
       params: { slug: [''] },
