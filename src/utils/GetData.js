@@ -1,9 +1,6 @@
 const fetchData = async (url) => {
 
   let res = await fetch(`${url}`)
-  console.log('res:', res);
-  
-
   let data = await res.json()
 
   if (res.status === 500) {
