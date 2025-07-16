@@ -104,7 +104,7 @@ const PhotoBox = ({ data, spaceBefore, spaceAfter, id }) => {
                             }}
                           />
                         </Link>
-                      ) : (
+                      ) : ( 
                         <h4
                           dangerouslySetInnerHTML={{
                             __html: DOMPurify.sanitize(item.photoBoxTitle),
@@ -112,7 +112,7 @@ const PhotoBox = ({ data, spaceBefore, spaceAfter, id }) => {
                         />
                       ))}
                     {item.photoBoxText && <p>{item.photoBoxText}</p>}
-                    {item.linkText && (
+                    {item.linkText && item.link && (
                       <Link
                         href={item.link.href}
                         title=""
@@ -196,7 +196,7 @@ const PhotoBox = ({ data, spaceBefore, spaceAfter, id }) => {
                       ))}
 
                     {item.photoBoxText && <p>{item.photoBoxText}</p>}
-                    {item.linkText && (
+                    {item.linkText && item.link && (
                       <Link
                         href={item.link.href}
                         title=""

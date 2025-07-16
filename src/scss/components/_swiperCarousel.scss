@@ -78,7 +78,7 @@
 }
 
 .app-gallery {
-  min-height: 55rem;
+  min-height: 55rem;  
   .app-gallery-items {
     .app-gallery__card-opacity,
     .app-gallery__card {
@@ -90,6 +90,7 @@
         max-width: 100%;
         margin: auto;
         display: block;
+        // margin-right: 12px;
       }
     }
     .swiper-pagination {

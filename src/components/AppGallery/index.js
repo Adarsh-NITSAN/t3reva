@@ -8,15 +8,16 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 const AppGallery = ({ data, spaceBefore, spaceAfter, id }) => {
   const appGalleryRef = useRef(null);
   const [height, setHeight] = useState(null);
+  
 
   const settings = {
     pagination: {
       clickable: true,
     },
+    slidesPerView: 1,    
+    watchOverflow: true,
+    loop: data.appGalleryVariation === '1' ? false : true,
     centeredSlides: true,
-    centeredSlidesBounds: true,
-    slidesPerView: 1,
-    loop: true,
     breakpoints: {
       767: {
         slidesPerView: 2,
@@ -52,7 +53,7 @@ const AppGallery = ({ data, spaceBefore, spaceAfter, id }) => {
   };
 
   useEffect(() => {
-    if (appGalleryRef.current) {
+    if (appGalleryRef.current) {      
       const height = appGalleryRef.current.offsetHeight;
       setHeight(height);
     }
@@ -64,7 +65,7 @@ const AppGallery = ({ data, spaceBefore, spaceAfter, id }) => {
       className={`app-gallery ${
         spaceBefore && `frame-space-before-${spaceBefore}`
       } ${spaceAfter && `frame-space-after-${spaceAfter}`}`}
-      style={{ height: `${height}px` }}
+      style={{ minHeight: `${height}px` }}
     >
       {data.mockupImage &&
         data.mockupImage.length > 0 &&

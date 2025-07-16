@@ -73,7 +73,7 @@ const RenderComponents = ({ pageData, settings, type }) => {
                 )
               }
             } else {
-              return renderContent(current)
+              return <React.Fragment key={current.uid || ids}>{renderContent(current)}</React.Fragment>
             }
           })}
         </div>

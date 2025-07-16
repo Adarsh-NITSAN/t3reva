@@ -245,11 +245,16 @@ const PricingList = ({ data, spaceBefore, spaceAfter, id }) => {
             spaceAfter && `frame-space-after-${spaceAfter}`
           } tab-layout pricing-list`}
         >
-          <Tabs
-            defaultActiveKey={`${data.pricingList[0].tabsTitle}`}
+         <Tabs
+            defaultActiveKey={
+              data.pricingList?.[0]?.tabsTitle
+                ? `${data.pricingList[0].tabsTitle}`
+                : ''
+            }
             id="fill-tab-example"
             justify
           >
+
             {data.pricingList &&
               data.pricingList.length > 0 &&
               data.pricingList.map(({ tabsTitle, addItem }, index) => {

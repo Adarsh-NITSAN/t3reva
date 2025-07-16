@@ -67,11 +67,15 @@ const Footer = ({ pageData }) => {
         }
         let total_height = medium_footer_height + small_footer_height
 
-        document.getElementsByClassName(
-          'wrapper'
-        )[0].style.marginBottom = `${total_height}px`
+        const wrapper = document.getElementsByClassName('wrapper')[0];
+        if (wrapper) {
+          wrapper.style.marginBottom = `${total_height}px`;
+        }
       } else {
-        document.getElementsByClassName('wrapper')[0].style.marginBottom = `0px`
+        const wrapper = document.getElementsByClassName('wrapper')[0];
+        if (wrapper) {
+          wrapper.style.marginBottom = `0px`;
+        }
       }
     })
 
@@ -91,13 +95,15 @@ const Footer = ({ pageData }) => {
           }
           let total_height = medium_footer_height + small_footer_height
 
-          document.getElementsByClassName(
-            'wrapper'
-          )[0].style.marginBottom = `${total_height}px`
+          const wrapper = document.getElementsByClassName('wrapper')[0];
+          if (wrapper) {
+            wrapper.style.marginBottom = `${total_height}px`;
+          }
         } else {
-          document.getElementsByClassName(
-            'wrapper'
-          )[0].style.marginBottom = `0px`
+          const wrapper = document.getElementsByClassName('wrapper')[0];
+          if (wrapper) {
+            wrapper.style.marginBottom = `0px`;
+          }
         }
       })
     }
@@ -127,11 +133,15 @@ const Footer = ({ pageData }) => {
         }
         let total_height = medium_footer_height + small_footer_height
 
-        document.getElementsByClassName(
-          'wrapper'
-        )[0].style.marginBottom = `${total_height}px`
+        const wrapper = document.getElementsByClassName('wrapper')[0];
+        if (wrapper) {
+          wrapper.style.marginBottom = `${total_height}px`;
+        }
       } else {
-        document.getElementsByClassName('wrapper')[0].style.marginBottom = `0px`
+        const wrapper = document.getElementsByClassName('wrapper')[0];
+        if (wrapper) {
+          wrapper.style.marginBottom = `0px`;
+        }
       }
     })
 
@@ -151,13 +161,15 @@ const Footer = ({ pageData }) => {
           }
           let total_height = medium_footer_height + small_footer_height
 
-          document.getElementsByClassName(
-            'wrapper'
-          )[0].style.marginBottom = `${total_height}px`
+          const wrapper = document.getElementsByClassName('wrapper')[0];
+          if (wrapper) {
+            wrapper.style.marginBottom = `${total_height}px`;
+          }
         } else {
-          document.getElementsByClassName(
-            'wrapper'
-          )[0].style.marginBottom = `0px`
+          const wrapper = document.getElementsByClassName('wrapper')[0];
+          if (wrapper) {
+            wrapper.style.marginBottom = `0px`;
+          }
         }
       })
     }
@@ -179,11 +191,15 @@ const Footer = ({ pageData }) => {
 
       let total_height = medium_footer_height + small_footer_height
 
-      document.getElementsByClassName(
-        'wrapper'
-      )[0].style.marginBottom = `${total_height}px`
+      const wrapper = document.getElementsByClassName('wrapper')[0];
+      if (wrapper) {
+        wrapper.style.marginBottom = `${total_height}px`;
+      }
     } else {
-      document.getElementsByClassName('wrapper')[0].style.marginBottom = `0px`
+      const wrapper = document.getElementsByClassName('wrapper')[0];
+      if (wrapper) {
+        wrapper.style.marginBottom = `0px`;
+      }
     }
   }, [footerData, socialLinks, footerMenus, themeSwitcher, footerLayout])
 

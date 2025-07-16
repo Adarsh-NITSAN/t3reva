@@ -148,7 +148,7 @@ const IconBox = ({ data, spaceBefore, spaceAfter, id }) => {
             })}
           </ul>
         )}
-        {data.linkText && (
+        {data.linkText && data.link.href && (
           <div className="icon-box-text__link">
             {data.selectLinkVariation === '0' ? (
               <Link href={data.link.href} className="icon-box-link">
